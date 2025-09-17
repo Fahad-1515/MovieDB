@@ -1,0 +1,76 @@
+/* Movie Detail Page Styles */
+.movie-detail-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+}
+
+.backdrop-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
+.backdrop-overlay::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(15, 15, 15, 0.95) 0%,
+    rgba(26, 26, 26, 0.9) 50%,
+    rgba(15, 15, 15, 0.95) 100%
+  );
+}
+
+.movie-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .movie-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .movie-poster {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .cast-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Smooth transitions */
+.movie-detail-page * {
+  transition: all 0.3s ease;
+}
+
+/* Custom scrollbar for movie details */
+.movie-detail-page ::-webkit-scrollbar {
+  width: 6px;
+}
+
+.movie-detail-page ::-webkit-scrollbar-track {
+  background: #2d2d2d;
+}
+
+.movie-detail-page ::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 3px;
+}
+
+.movie-detail-page ::-webkit-scrollbar-thumb:hover {
+  background: #777;
+}

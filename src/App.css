@@ -1,0 +1,525 @@
+/* App.css */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* Custom Base Styles */
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-gray-900 text-white antialiased;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+      "Roboto", sans-serif;
+    line-height: 1.6;
+  }
+
+  /* Better focus styles */
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible,
+  a:focus-visible {
+    @apply outline-2 outline-blue-500 outline-offset-2;
+  }
+
+  /* Remove default button styles */
+  button {
+    @apply focus:outline-none;
+  }
+
+  /* Improve image rendering */
+  img {
+    @apply transition-all duration-300;
+  }
+
+  /* Better selection styles */
+  ::selection {
+    @apply bg-blue-600/30 text-white;
+  }
+
+  ::-moz-selection {
+    @apply bg-blue-600/30 text-white;
+  }
+}
+
+/* Custom Component Styles */
+@layer components {
+  /* Container utilities */
+  .container {
+    @apply max-w-7xl mx-auto;
+  }
+
+  /* Card styles */
+  .card {
+    @apply bg-gray-800 rounded-lg shadow-lg border border-gray-700;
+  }
+
+  .card-hover {
+    @apply card hover:shadow-xl hover:border-gray-600 transition-all duration-300;
+  }
+
+  /* Button variants */
+  .btn {
+    @apply inline-flex items-center justify-center rounded-md font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-primary {
+    @apply btn bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500;
+  }
+
+  .btn-secondary {
+    @apply btn bg-gray-600 text-white hover:bg-gray-700 focus:ring-gray-500;
+  }
+
+  .btn-danger {
+    @apply btn bg-red-600 text-white hover:bg-red-700 focus:ring-red-500;
+  }
+
+  .btn-outline {
+    @apply btn border border-gray-600 text-white hover:bg-gray-800 focus:ring-gray-500;
+  }
+
+  .btn-ghost {
+    @apply btn text-gray-300 hover:text-white hover:bg-gray-800 focus:ring-gray-500;
+  }
+
+  .btn-sm {
+    @apply px-3 py-1.5 text-sm;
+  }
+
+  .btn-md {
+    @apply px-4 py-2;
+  }
+
+  .btn-lg {
+    @apply px-6 py-3 text-lg;
+  }
+
+  /* Input styles */
+  .input {
+    @apply w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200;
+  }
+
+  .input-error {
+    @apply input border-red-500 focus:ring-red-500 focus:border-red-500;
+  }
+
+  /* Form styles */
+  .form-group {
+    @apply mb-4;
+  }
+
+  .form-label {
+    @apply block text-sm font-medium text-gray-300 mb-1;
+  }
+
+  .form-error {
+    @apply text-red-400 text-sm mt-1;
+  }
+
+  /* Badge styles */
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .badge-primary {
+    @apply badge bg-blue-600 text-white;
+  }
+
+  .badge-secondary {
+    @apply badge bg-gray-600 text-white;
+  }
+
+  .badge-success {
+    @apply badge bg-green-600 text-white;
+  }
+
+  .badge-warning {
+    @apply badge bg-yellow-600 text-white;
+  }
+
+  .badge-danger {
+    @apply badge bg-red-600 text-white;
+  }
+
+  /* Modal backdrop */
+  .modal-backdrop {
+    @apply fixed inset-0 bg-black/80 backdrop-blur-sm z-50;
+  }
+
+  .modal-container {
+    @apply fixed inset-0 z-50 flex items-center justify-center p-4;
+  }
+
+  .modal-content {
+    @apply bg-gray-800 rounded-lg shadow-xl border border-gray-700 max-w-md w-full max-h-[90vh] overflow-y-auto;
+  }
+
+  /* Loading spinner */
+  .spinner {
+    @apply animate-spin rounded-full border-2 border-gray-200 border-t-current;
+  }
+
+  /* Gradient backgrounds */
+  .gradient-primary {
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  }
+
+  .gradient-dark {
+    background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+  }
+
+  /* Text utilities */
+  .text-gradient {
+    @apply bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent;
+  }
+
+  /* Layout utilities */
+  .page-container {
+    @apply container mx-auto px-4 py-8;
+  }
+
+  .section-title {
+    @apply text-2xl font-bold text-white mb-6;
+  }
+
+  .subsection-title {
+    @apply text-xl font-semibold text-white mb-4;
+  }
+
+  /* Movie specific styles */
+  .movie-backdrop {
+    @apply relative h-96 overflow-hidden;
+  }
+
+  .movie-backdrop::before {
+    content: "";
+    @apply absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50;
+  }
+
+  .movie-poster {
+    @apply w-80 rounded-lg shadow-2xl;
+  }
+
+  .cast-grid {
+    @apply grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4;
+  }
+
+  .cast-item {
+    @apply text-center;
+  }
+
+  .cast-image {
+    @apply w-16 h-16 rounded-full object-cover mx-auto mb-2;
+  }
+
+  /* Watchlist specific */
+  .watchlist-count {
+    @apply absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center;
+  }
+
+  /* Search results */
+  .search-empty {
+    @apply text-center text-gray-400 py-12;
+  }
+
+  /* Rating stars */
+  .rating-stars {
+    @apply relative inline-flex;
+  }
+
+  .rating-stars-background {
+    @apply flex text-gray-300;
+  }
+
+  .rating-stars-foreground {
+    @apply absolute top-0 left-0 overflow-hidden flex;
+  }
+}
+
+/* Custom Utility Styles */
+@layer utilities {
+  /* Line clamping */
+  .line-clamp-1 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+  }
+
+  .line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  .line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+
+  /* Scrollbar styling */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: #4b5563 #1f2937;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    @apply bg-gray-800;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-gray-600 rounded;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-500;
+  }
+
+  /* Animation utilities */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-out;
+  }
+
+  @keyframes slideIn {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  .animate-slide-in {
+    animation: slideIn 0.3s ease-out;
+  }
+
+  /* Glass morphism effect */
+  .glass {
+    @apply bg-white/10 backdrop-blur-md border border-white/10;
+  }
+
+  /* Hover effects */
+  .hover-lift {
+    @apply transition-transform duration-300 hover:-translate-y-1;
+  }
+
+  .hover-glow {
+    @apply transition-shadow duration-300 hover:shadow-lg hover:shadow-blue-500/20;
+  }
+
+  /* Text shadow for better readability on images */
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  }
+
+  .text-shadow-sm {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  }
+
+  /* Aspect ratio utilities */
+  .aspect-poster {
+    aspect-ratio: 2/3;
+  }
+
+  .aspect-backdrop {
+    aspect-ratio: 16/9;
+  }
+
+  /* Grid utilities */
+  .grid-auto-fit {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .grid-auto-fill {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+
+  /* Z-index utilities */
+  .z-dropdown {
+    z-index: 1000;
+  }
+
+  .z-modal {
+    z-index: 2000;
+  }
+
+  .z-tooltip {
+    z-index: 3000;
+  }
+
+  /* Filter utilities for images */
+  .filter-grayscale {
+    filter: grayscale(100%);
+  }
+
+  .filter-sepia {
+    filter: sepia(100%);
+  }
+
+  /* Transition utilities */
+  .transition-slow {
+    transition-duration: 500ms;
+  }
+
+  .transition-medium {
+    transition-duration: 300ms;
+  }
+
+  .transition-fast {
+    transition-duration: 150ms;
+  }
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    @apply bg-white text-black;
+  }
+
+  .card {
+    @apply bg-white border-gray-300 shadow-none;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .btn {
+    @apply border-2;
+  }
+
+  .input {
+    @apply border-2;
+  }
+}
+
+/* Dark mode support (already dark by default, but for consistency) */
+@media (prefers-color-scheme: dark) {
+  .force-light {
+    @apply bg-white text-gray-900;
+  }
+}
+
+/* Custom responsive breakpoints */
+@screen xs {
+  .xs\:block {
+    display: block;
+  }
+}
+
+/* Custom keyframes */
+@keyframes pulse-gentle {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-pulse-gentle {
+  animation: pulse-gentle 2s ease-in-out infinite;
+}
+
+/* Focus visible polyfill for older browsers */
+.js-focus-visible :focus:not(.focus-visible) {
+  outline: none;
+}
+
+/* Selection styles for code blocks */
+pre::selection,
+code::selection {
+  @apply bg-blue-600/50;
+}
+
+/* Placeholder styles */
+::placeholder {
+  @apply text-gray-400;
+}
+
+:-ms-input-placeholder {
+  @apply text-gray-400;
+}
+
+::-ms-input-placeholder {
+  @apply text-gray-400;
+}
+
+/* SVG styles */
+svg {
+  @apply fill-current;
+}
+
+/* Custom scroll snap */
+.snap-x {
+  scroll-snap-type: x mandatory;
+}
+
+.snap-start {
+  scroll-snap-align: start;
+}
+
+/* Custom backdrop filters */
+.backdrop-blur-strong {
+  backdrop-filter: blur(20px);
+}
+
+/* Custom transforms */
+.transform-3d {
+  transform-style: preserve-3d;
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+/* Custom filters for movie posters */
+.movie-poster-filter {
+  filter: brightness(0.95) contrast(1.05) saturate(1.1);
+}
+
+.movie-poster-filter:hover {
+  filter: brightness(1.05) contrast(1.1) saturate(1.2);
+}
