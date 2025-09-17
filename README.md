@@ -26,4 +26,10 @@ A modern movie discovery website built with React, Vite, and Tailwind CSS.
 4. Create `.env` file and add your API key:
    ```env
    VITE_TMDB_API_KEY=your_api_key_here
+   VITE_TMDB_READ_ACCESS_TOKEN="your_read_access_token"
+
+    # URLs (these remain the same)
+   VITE_TMDB_BASE_URL="https://api.themoviedb.org/3"
+   VITE_TMDB_IMAGE_BASE_URL="https://image.tmdb.org/t/p"
    ```
+
