@@ -8,6 +8,8 @@ A modern movie discovery website built with React, Vite, and Tailwind CSS.
 
 <img width="1905" height="913" alt="Screenshot 2025-09-17 173028" src="https://github.com/user-attachments/assets/b569978e-bfa8-4bf5-bc4d-bcd23cd2b320" />
 
+<img width="1896" height="900" alt="Screenshot 2025-09-17 173229" src="https://github.com/user-attachments/assets/668a331b-70de-41be-a66f-a858fb8eeee9" />
+
 ## Features
 
 - Browse trending, popular, top-rated, and upcoming movies
