@@ -2,11 +2,11 @@
 
 A modern movie discovery website built with React, Vite, and Tailwind CSS.
 
-<img width="1909" height="899" alt="Screenshot 2025-09-17 113551" src="https://github.com/user-attachments/assets/2dad1da2-9d2c-41e4-8193-b074dadbf6a8" />
+<img width="1852" height="824" alt="Screenshot 2025-09-17 172839" src="https://github.com/user-attachments/assets/5eb503af-b7f8-4cdf-b27d-6332c1c800c2" />
 
-<img width="1892" height="836" alt="Screenshot 2025-09-17 113602" src="https://github.com/user-attachments/assets/7ab317a2-c05a-4917-bf62-2d3bb946efa4" />
+<img width="1915" height="911" alt="Screenshot 2025-09-17 172918" src="https://github.com/user-attachments/assets/df53f6fd-c1bd-47f1-83f1-85deefd04fd6" />
 
-<img width="1916" height="689" alt="Screenshot 2025-09-17 113625" src="https://github.com/user-attachments/assets/6b183d51-6402-4656-b8f3-326e6f18b988" />
+<img width="1905" height="913" alt="Screenshot 2025-09-17 173028" src="https://github.com/user-attachments/assets/b569978e-bfa8-4bf5-bc4d-bcd23cd2b320" />
 
 ## Features
 
