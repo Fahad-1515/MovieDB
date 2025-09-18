@@ -16,7 +16,7 @@ A modern movie discovery website built with React, Vite, and Tailwind CSS.
 - Search movies with real-time results
 - Add movies to watchlist (persists in localStorage)
 - Detailed movie information with cast and crew
-- Responsive design for all devices
+- Responsive design for all devices.
 
 ## Setup
 
